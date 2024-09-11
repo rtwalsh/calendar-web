@@ -5,6 +5,11 @@
  *  Date:   September 10, 2024
  */
 
+const MONTHS = [ "January", "February", "March", 
+                 "April", "May", "June",
+                 "July", "August", "September",
+                 "October", "November", "December" ];
+
 let calendar;
 
 function initialize() {
@@ -16,4 +21,12 @@ function initialize() {
     
     console.log("The current month is " + calendar.month);
     console.log("The current year is " + calendar.year);
+
+    setHeading();
+}
+
+function setHeading() {
+    let month = MONTHS[calendar.month];
+    let element = document.getElementById("month_and_year");
+    element.textContent = month + " " + calendar.year;
 }
